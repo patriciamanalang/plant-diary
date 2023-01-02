@@ -1,3 +1,20 @@
+.container {
+  margin: auto;
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+body {
+  background-color: rgb(02, 56, 35);
+}
+
+.column-full {
+  max-width: 100%;
+}
+
 .navbar {
   background-color: rgb(29, 95, 50);
   padding: 1rem;
@@ -29,6 +46,56 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.homepage {
-  background-color: rgb(0, 56, 34);
+.home-background {
+  position: relative;
+  background-color: rgb(02, 56, 35);
+}
+
+.logo {
+  object-fit: contain;
+  height: 20rem;
+  width: 24rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo-position {
+  background-color: rgb(02, 56, 35);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.input {
+  background-color: #af7148;
+  margin: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  height: 50px;
+  width: 300px;
+  font-size: 20px;
+  color: black;
+}
+
+.add {
+  background-color: #af7148;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  height: 50px;
+  width: 200px;
+  font-size: 18px;
+  margin-top: 2rem;
+  cursor: pointer;
+  font-weight: 500;
 }
