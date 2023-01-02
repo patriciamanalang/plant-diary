@@ -99,3 +99,28 @@ body {
   cursor: pointer;
   font-weight: 500;
 }
+
+.my-plants {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 1rem;
+}
+
+.no-plant {
+  margin-top: 5rem;
+}
+
+.add-plant {
+  background-color: #af7148;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  height: 50px;
+  width: 220px;
+  font-size: 25px;
+  margin-top: 4rem;
+  cursor: pointer;
+}
