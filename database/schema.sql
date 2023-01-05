@@ -11,7 +11,7 @@ CREATE TABLE "public"."users" (
 	"name" TEXT NOT NULL,
 	"email" TEXT NOT NULL UNIQUE,
 	"hashedPassword" TEXT NOT NULL UNIQUE,
-	"createdAt" TIMESTAMP NOT NULL,
+	"createdAt" TIMESTAMPTZ(6) NOT NULL default now(),
 	CONSTRAINT "users_pk" PRIMARY KEY ("userId")
 ) WITH (
   OIDS=FALSE
@@ -24,7 +24,7 @@ CREATE TABLE "public"."entries" (
 	"plantId" integer NOT NULL,
 	"notes" TEXT NOT NULL,
 	"photoUrl" TEXT NOT NULL,
-	"createdAt" TIMESTAMP NOT NULL,
+	"createdAt" TIMESTAMPTZ(6) NOT NULL default now(),
 	CONSTRAINT "entries_pk" PRIMARY KEY ("entryId")
 ) WITH (
   OIDS=FALSE
@@ -33,10 +33,10 @@ CREATE TABLE "public"."entries" (
 
 
 CREATE TABLE "public"."plants" (
-	"plantId" serial NOT NULL,
+	"plantId" serial,
 	"userId" integer NOT NULL,
 	"plantName" TEXT NOT NULL,
-	"createdAt" TIMESTAMP NOT NULL,
+	"createdAt" TIMESTAMPTZ(6) NOT NULL default now(),
 	CONSTRAINT "plants_pk" PRIMARY KEY ("plantId")
 ) WITH (
   OIDS=FALSE

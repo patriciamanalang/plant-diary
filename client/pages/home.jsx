@@ -5,6 +5,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      plantCollections: [],
       plantName: ''
     };
     this.handlePlantNameChange = this.handlePlantNameChange.bind(this);
@@ -17,7 +18,27 @@ export default class Home extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // console.log('plantName:', this.state.plantName);
+    const { plantName } = this.state;
+    // plantCollections.push(plantName);
+    const plant = { plantName };
+    // console.log('plant name:', plantName);
+
+    fetch('/plants/add', {
+      method: 'POST',
+      body: JSON.stringify(plant),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+
+    })
+      .then(res => res.json())
+      .then(plantData => {
+        this.setState({ plantName: '' });
+        window.location.hash = 'myplants';
+        // console.log('it fired');
+      })
+      .catch(err => console.error(err));
+
   }
 
   render() {
