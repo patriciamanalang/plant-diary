@@ -24,8 +24,6 @@ app.use(errorMiddleware);
 app.use(express.json());
 
 app.post('/plants/add', (req, res, next) => {
-  // const { userId } = req.user;
-  // console.log('it fired');
   const { plantName } = req.body;
   const sql = `
     INSERT INTO "plants" ( "plantName", "userId")
@@ -37,6 +35,21 @@ app.post('/plants/add', (req, res, next) => {
     .then(result => {
       const [newPlant] = result.rows;
       res.status(201).json(newPlant);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/plants', (req, res, next) => {
+  // const { userId } = req.user;
+  const sql = `
+    select "plantName"
+    from "plants"
+  `;
+  // const params = [userId];
+  db.query(sql)
+    .then(result => {
+      const plants = result.rows;
+      res.status(200).json(plants);
     })
     .catch(err => next(err));
 });
