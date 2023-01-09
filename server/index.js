@@ -15,10 +15,6 @@ const app = express();
 
 app.use(staticMiddleware);
 
-// app.get('/api/hello', (req, res) => {
-//   res.json({ hello: 'world' });
-// });
-
 app.use(errorMiddleware);
 
 app.use(express.json());
@@ -40,12 +36,10 @@ app.post('/plants/add', (req, res, next) => {
 });
 
 app.get('/plants', (req, res, next) => {
-  // const { userId } = req.user;
   const sql = `
     select "plantName"
     from "plants"
   `;
-  // const params = [userId];
   db.query(sql)
     .then(result => {
       const plants = result.rows;

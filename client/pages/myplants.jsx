@@ -5,8 +5,7 @@ export default class MyPlants extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      plantCollection: [],
-      isClicked: false
+      plantCollection: []
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handlePlantCollection = this.handlePlantCollection.bind(this);
@@ -22,7 +21,6 @@ export default class MyPlants extends React.Component {
       .then(res => res.json())
       .then(plantCollection => {
         this.setState({ plantCollection });
-        // console.log(plantCollection);
       })
       .catch(err => console.error(err));
   }
@@ -47,9 +45,7 @@ export default class MyPlants extends React.Component {
   render() {
     const { plantCollection } = this.state;
     const showHiddenMessage = plantCollection.length === 0 ? '' : 'hidden';
-    // console.log('this one:', plantCollection);
     const plantEntries = plantCollection.map((plant, index) => {
-      // console.log(plantCollection[index]);
       return (
         <div key={index} className='plantnames-container'>
           <h3 className='plantname'>{`${plant.plantName}`}</h3>
@@ -67,11 +63,12 @@ export default class MyPlants extends React.Component {
             {plantEntries}
           </div>
         </div>
-        <div className='hidden delete-plant-modal'/>
-        <div className='hidden delete-plant-rectangle' />
-
+        <div className='hidden delete-plant-modal'>
+          <div className='delete-plant-rectangle' >
+            <h3 className='delete-text'>Are you sure you to remove this plant from your  &#34;My Plants&#34; list?</h3>
+          </div>
+        </div>
       </div>
-
     );
   }
 }
