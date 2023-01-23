@@ -3,6 +3,7 @@ const express = require('express');
 const staticMiddleware = require('./static-middleware');
 const errorMiddleware = require('./error-middleware');
 const pg = require('pg');
+const ClientError = require('./client-error');
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -14,10 +15,6 @@ const db = new pg.Pool({
 const app = express();
 
 app.use(staticMiddleware);
-
-// app.get('/api/hello', (req, res) => {
-//   res.json({ hello: 'world' });
-// });
 
 app.use(errorMiddleware);
 
@@ -40,16 +37,42 @@ app.post('/plants/add', (req, res, next) => {
 });
 
 app.get('/plants', (req, res, next) => {
-  // const { userId } = req.user;
   const sql = `
-    select "plantName"
+    select "plantName",
+           "plantId"
     from "plants"
   `;
-  // const params = [userId];
   db.query(sql)
     .then(result => {
       const plants = result.rows;
       res.status(200).json(plants);
+    })
+    .catch(err => next(err));
+});
+
+app.delete('/delete/plant/:plantId', (req, res, next) => {
+  const plantId = Number(req.params.plantId);
+  if (!Number.isInteger(plantId) || plantId < 1) {
+    res.status(400).json({
+      error: 'plantId must be a positive integer'
+    });
+    return;
+  }
+  const sql = `
+  delete
+    from "plants"
+   where "plantId" = $1
+  returning *
+  `;
+  const params = [plantId];
+  db.query(sql, params)
+    .then(result => {
+      const [plant] = result.rows;
+      if (!plant) {
+        throw new ClientError(404, `Cannot find plant with plantId ${plantId}`);
+      } else {
+        res.sendStatus(204);
+      }
     })
     .catch(err => next(err));
 });

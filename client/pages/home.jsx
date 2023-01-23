@@ -1,5 +1,4 @@
 import React from 'react';
-// import HelloWorld from '../components/hello-world';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -19,9 +18,7 @@ export default class Home extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { plantName } = this.state;
-    // plantCollections.push(plantName);
     const plant = { plantName };
-    // console.log('plant name:', plantName);
 
     fetch('/plants/add', {
       method: 'POST',
@@ -35,7 +32,6 @@ export default class Home extends React.Component {
       .then(plantData => {
         this.setState({ plantName: '' });
         window.location.hash = 'myplants';
-        // console.log('it fired');
       })
       .catch(err => console.error(err));
 
