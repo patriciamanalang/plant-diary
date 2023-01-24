@@ -14,6 +14,7 @@ export default class MyPlants extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleTrashIcon = this.handleTrashIcon.bind(this);
     this.handleCancelButton = this.handleCancelButton.bind(this);
+    this.handlePlantNameClick = this.handlePlantNameClick.bind(this);
   }
 
   componentDidMount() {
@@ -39,7 +40,7 @@ export default class MyPlants extends React.Component {
     const plantEntries = event.map((plant, index) => {
       return (
         <div key={index} className='plantnames-container'>
-          <h3 className='plantname'>{`${plant.plantName}`}</h3>
+          <h3 onClick={this.handlePlantNameClick} className='plantname'>{`${plant.plantName}`}</h3>
           <i onClick={this.handleTrashIcon} className='fa-solid fa-trash' id={`${plant.plantId}`} />
         </div>
       );
@@ -80,6 +81,11 @@ export default class MyPlants extends React.Component {
           })
           .catch(err => console.error(err));
       });
+  }
+
+  handlePlantNameClick() {
+    window.location.hash = 'plantentry';
+
   }
 
   render() {

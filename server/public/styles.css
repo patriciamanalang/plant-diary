@@ -192,3 +192,34 @@ body {
   border-radius: 5px;
   border: none;
 }
+
+.plantentry-name {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.add-entry {
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #af7148;
+  color: white;
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+.add-entry-div {
+  text-align: center;
+}
+
+.no-plant-entries {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 5rem;
+}

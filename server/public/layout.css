@@ -10,3 +10,7 @@
 .column-full {
   max-width: 100%;
 }
+
+.column-half {
+  flex-basis: 50%;
+}
