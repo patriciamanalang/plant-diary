@@ -77,6 +77,17 @@ app.delete('/delete/plant/:plantId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// app.get('/plants', (req, res, next) => {
+//   const sql = `
+//   select "plantName",
+//          "plantId"
+//   from "plants"
+//   `;
+//   db.query(sql)
+//     .then(result => res.json(result.rows))
+//     .catch(err => next(err));
+// });
+
 app.listen(process.env.PORT, () => {
   process.stdout.write(`\n\napp listening on port ${process.env.PORT}\n\n`);
 });

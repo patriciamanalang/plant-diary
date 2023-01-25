@@ -1,7 +1,30 @@
 import React from 'react';
 import AppContext from '../lib/app-context';
 
-export default class PlantEntry extends React.Component {
+export default class PlantPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      plantName: '',
+      plantId: null
+    };
+  }
+
+  // componentDidMount() {
+  //   fetch(`/plants/${this.props.plantName}`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //     .then(res => res.json())
+  //     .then(plant => this.setState({
+  //       plantName: plant.plantName,
+  //       plantId: plant.plantId
+  //     }))
+  //     .catch(err => console.error(err));
+  // }
+
   render() {
     return (
       <div className='container'>
@@ -23,4 +46,4 @@ export default class PlantEntry extends React.Component {
   }
 }
 
-PlantEntry.contextType = AppContext;
+PlantPage.contextType = AppContext;
