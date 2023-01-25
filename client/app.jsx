@@ -4,7 +4,7 @@ import Navbar from './components/navbar';
 import AppContext from './lib/app-context';
 import MyPlants from './pages/myplants';
 import parseRoute from './lib/parse-route';
-import PlantPage from './pages/plantpage';
+import PlantEntryPage from './pages/plantentrypage';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,8 +26,8 @@ export default class App extends React.Component {
       return <Home />;
     } else if (route.path === 'myplants') {
       return <MyPlants />;
-    } else if (route.path === 'plantpage') {
-      return <PlantPage />;
+    } else if (route.path === 'plantentrypage') {
+      return <PlantEntryPage />;
     }
   }
 

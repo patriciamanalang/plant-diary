@@ -1,5 +1,6 @@
 import React from 'react';
 import AppContext from '../lib/app-context';
+// import PlantPage from './plantpage';
 
 export default class MyPlants extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ export default class MyPlants extends React.Component {
     const plantEntries = event.map((plant, index) => {
       return (
         <div key={index} className='plantnames-container'>
-          <h3 onClick={this.handlePlantNameClick} className='plantname'>{`${plant.plantName}`}</h3>
+          <h3 onClick={this.handlePlantNameClick} className='plantname' id={`${plant.plantName}`}>{`${plant.plantName}`}</h3>
           <i onClick={this.handleTrashIcon} className='fa-solid fa-trash' id={`${plant.plantId}`} />
         </div>
       );
@@ -83,9 +84,8 @@ export default class MyPlants extends React.Component {
       });
   }
 
-  handlePlantNameClick() {
-    window.location.hash = 'plantpage';
-
+  handlePlantNameClick(event) {
+    window.location.hash = `plantentrypage?plantName=${event.target.id}`;
   }
 
   render() {
