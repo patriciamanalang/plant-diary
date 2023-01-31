@@ -223,3 +223,16 @@ body {
   text-align: center;
   margin-top: 5rem;
 }
+
+/* .plant-photo {
+
+} */
+
+.plant-photo-div {
+  height: 20rem;
+  width: 20rem;
+  object-fit: contain;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
