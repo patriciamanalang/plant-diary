@@ -224,15 +224,70 @@ body {
   margin-top: 5rem;
 }
 
-/* .plant-photo {
-
-} */
+.plant-photo {
+  object-fit: contain;
+  height: 18rem;
+  width: 18rem;
+  margin-top: 1rem;
+}
 
 .plant-photo-div {
-  height: 20rem;
-  width: 20rem;
-  object-fit: contain;
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+
+.add-photo-div {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.notes-div {
+  margin-top: 4rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-photo {
+  margin-top: 1rem;
+  border-radius: 20px;
+  border: solid 2px white;
+  height: 35px;
+  width: 135px;
+  background-color: #1c6033;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.notes-label {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  margin-top: 8px;
+}
+
+.save-btn-div {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.save-btn {
+  height: 40px;
+  width: 110px;
+  border-radius: 20px;
+  background-color: #af7148;
+  color: white;
+  font-size: 26px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
