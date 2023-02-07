@@ -7,7 +7,11 @@ export default class AddEntry extends React.Component {
     super(props);
     this.state = {
       plantCollection: [],
-      plantId: null
+      entryId: 0,
+      plantName: '',
+      photoUrl: null,
+      notes: ''
+
     };
     // this.handleShowSelectedPlant = this.handleShowSelectedPlant.bind(this);
   }
@@ -36,25 +40,25 @@ export default class AddEntry extends React.Component {
             <h1 className='plantentry-name'>Snake Plant</h1>
           </div>
         </div>
-        <div className='column-full '>
-          <div className='row plant-photo-div'>
+        <div className='column-full'>
+          <div className='plant-photo-div'>
             <img className='plant-photo' src="https://www.wolflair.com/wp-content/uploads/2017/01/placeholder-300x300.jpg" alt="placeholder image" />
           </div>
-          <div className='add-photo-div'>
-            <button className='add-photo'>Add Photo</button>
-          </div>
+        </div>
+        <div className='add-photo-div'>
+          <button className='add-photo'>Add Photo</button>
+        </div>
+        <form>
           <div className='notes-div'>
             <label className='notes-label' htmlFor="notes">Notes</label>
-            <div className='notes'>
-              <textarea name="notes" id="notes" cols="34" rows="10" />
-            </div>
           </div>
-          <div className='column-full'>
+          <div className='notes'>
+            <textarea name="notes" id="notes" cols="34" rows="12" />
             <div className='save-btn-div'>
-              <button className='save-btn'>Save</button>
+              <button id='button' className='save-btn'>Save</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

@@ -244,7 +244,12 @@ body {
 }
 
 .notes-div {
-  margin-top: 4rem;
+  margin-top: 3rem;
+  text-align: center;
+  margin-right: 15rem;
+}
+
+.notes {
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -253,7 +258,7 @@ body {
 .add-photo {
   margin-top: 1rem;
   border-radius: 20px;
-  border: solid 2px white;
+  border: none;
   height: 35px;
   width: 135px;
   background-color: #1c6033;
@@ -267,9 +272,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 20px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
 }
 
 textarea {
@@ -282,7 +284,7 @@ textarea {
 }
 
 .save-btn {
-  height: 40px;
+  height: 35px;
   width: 110px;
   border-radius: 20px;
   background-color: #af7148;
@@ -290,4 +292,38 @@ textarea {
   font-size: 26px;
   border: none;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.trash-div,
+.editpen-div {
+  color: white;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding-top: 6rem;
+}
+
+.plant-photo-entry-div {
+  object-fit: contain;
+  text-align: center;
+}
+
+.plant-photo-entry {
+  height: 16rem;
+}
+
+.plant-notes {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.entry-modal-buttons {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

@@ -46,7 +46,30 @@ export default class PlantEntriesPage extends React.Component {
           </div>
         </div>
         <div>
-          <p className='no-plant-entries'>You have no entries for this plant.</p>
+          <p className='hidden no-plant-entries'>You have no entries for this plant.</p>
+        </div>
+        <div className='row'>
+          <div className='col-one-fourth trash-div'>
+            <i className="fa-solid fa-trash-can" />
+          </div>
+          <div className='column-half plant-photo-entry-div'>
+            <img className='plant-photo-entry' src="https://www.wolflair.com/wp-content/uploads/2017/01/placeholder-300x300.jpg" alt="placeholder image" />
+            <div className='plant-notes'>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ratione similique sint, beatae voluptate commodi temporibus! Officia a sit, porro animi cum, est sed placeat tenetur ratione, saepe soluta quidem!</p>
+            </div>
+          </div>
+          <div className='col-one-fourth editpen-div'>
+            <i className="fa-solid fa-pen" />
+          </div>
+        </div>
+        <div className='hidden delete-plant-modal'>
+          <div className='delete-plant-rectangle'>
+            <h3 className='delete-text'>Are you sure you want to delete this plant entry?</h3>
+            <div className='entry-modal-buttons' >
+              <button className='cancel'>CANCEL</button>
+              <button className='delete'>DELETE</button>
+            </div>
+          </div>
         </div>
       </div>
     );
