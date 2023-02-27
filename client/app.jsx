@@ -6,6 +6,8 @@ import MyPlants from './pages/myplants';
 import parseRoute from './lib/parse-route';
 import PlantEntriesPage from './pages/plantentriespage';
 import AddEntry from './pages/add-entry';
+import AuthPage from './pages/auth-page';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +33,8 @@ export default class App extends React.Component {
       return <PlantEntriesPage />;
     } else if (route.path === 'addentry') {
       return <AddEntry />;
+    } else if (route.path === 'authpage') {
+      return <AuthPage />;
     }
   }
 
