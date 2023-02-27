@@ -85,7 +85,7 @@ export default class MyPlants extends React.Component {
   }
 
   handlePlantNameClick(event) {
-    window.location.hash = `plantentrypage?plantName=${event.target.id}`;
+    window.location.hash = `plantentriespage?plantName=${event.target.id}`;
   }
 
   render() {

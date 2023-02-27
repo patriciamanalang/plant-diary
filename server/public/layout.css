@@ -14,3 +14,7 @@
 .column-half {
   flex-basis: 50%;
 }
+
+.col-one-fourth {
+  flex-basis: 25%;
+}
