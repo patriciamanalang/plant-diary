@@ -1,4 +1,4 @@
-# Plant Diary
+# Plant Diary 🌱
 
 A full stack web application for plant enthusiasts who want to organize and keep track of the growth/development of their plants.
 
