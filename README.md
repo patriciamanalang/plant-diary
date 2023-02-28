@@ -40,13 +40,9 @@ Try the application live here: https://plant-diary.patriciamanalang.tech/
 
 ## Preview
 
-#### Users can add a plant on their "My Plants" list
 
 
-
-
-#### Users can view a page dedicated for each plant
-
+![Kapture 2023-02-28 at 13 32 04](https://user-images.githubusercontent.com/109925604/221985402-993fbe8e-b8de-4e16-a5a7-25909a9d8d33.gif)
 
 
 
